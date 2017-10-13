@@ -8,12 +8,6 @@
 
 <ion-content padding>
 
-    <ion-card *ngIf="!everythingLoaded">
-        <ion-card-header>
-            <ion-card-title>Pretend loading your data - please wait...</ion-card-title>
-        </ion-card-header>
-    </ion-card>
-
     <div *ngIf="everythingLoaded">
         <ion-card *ngIf="!quizFinished">
             <ion-card-header>
