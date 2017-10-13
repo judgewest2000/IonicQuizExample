@@ -1,14 +1,30 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>
+            Ionic Blank
+        </ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+
+    <ion-card *ngIf="!quizFinished">
+        <ion-card-header>
+            <ion-card-title>Answer question (current got {{correctAnswers}} correct)</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <p>{{currentQuestion.description}}</p>
+            <button ion-button block (click)="next(1);">1</button>
+            <button ion-button block (click)="next(2);">2</button>
+            <button ion-button block (click)="next(3);">3</button>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card *ngIf="quizFinished">
+        <ion-card-header>
+            <ion-card-title>Total: {{correctAnswers}} correct out of {{questionsAsked}}</ion-card-title>
+        </ion-card-header>
+    </ion-card>
+
 </ion-content>
